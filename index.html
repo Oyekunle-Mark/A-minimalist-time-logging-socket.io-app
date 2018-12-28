@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Server Time Logger</title>
+        <script type="text/javascript" src="socket.io/socket.io.js"></script>
+        <script type="text/javascript">
+            let socket = io.connect();  //connects to socket.io server
+            socket.on('message', function(time) {      //when message event is received, server has sent time
+                document.getElementById('time').innerHTML = time;
+            });
+        </script>
+    </head>
+    <body>
+        Current server time is: <b><span id='time'></span></b>
+    </body>
+</html>
